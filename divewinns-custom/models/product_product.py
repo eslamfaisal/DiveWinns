@@ -17,3 +17,7 @@ class ProductProduct(models.Model):
                 product.vendor_id = supplier_info.name.id
                 product.vendor_product_code = supplier_info.product_code
                 product.vendor_product_name = supplier_info.product_name
+            else:
+                product.vendor_id = False
+                product.vendor_product_code = ""
+                product.vendor_product_name = ""
