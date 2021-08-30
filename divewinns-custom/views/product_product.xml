@@ -1,0 +1,14 @@
+<odoo>
+    <record id="divewinns_product_product_tree" model="ir.ui.view">
+        <field name="name">divewinns.product.product.tree</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="	product.product_product_tree_view"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="vendor_id" optional="show"/>
+                <field name="vendor_product_name" optional="show"/>
+                <field name="vendor_product_code" optional="show"/>
+            </field>
+        </field>
+    </record>
+</odoo>
