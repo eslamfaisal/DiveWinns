@@ -9,6 +9,10 @@
                 <field name="vendor_product_name" optional="show"/>
                 <field name="vendor_product_code" optional="show"/>
             </field>
+            <field name="uom_id" position="before">
+                <field name="qty_location_32" optional="show"/>
+                <field name="qty_location_37" optional="show"/>
+            </field>
         </field>
     </record>
 </odoo>
