@@ -2,6 +2,7 @@ from odoo import api, models, fields
 
 class TrainingDate(models.Model):
     _name = "divewinns.training.date"
+    _description = "Date of training"
 
     name = fields.Char(string="Name")
     date = fields.Datetime(string="Date", required=True)

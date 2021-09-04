@@ -6,7 +6,7 @@
     "summary": "DiveWinns customisations",
     "description": """DiveWinns customisations""",
     "version": "14.0.1",
-    "depends": ["base", "product", "purchase", "stock", "event"],
+    "depends": ["base", "product", "purchase", "stock", "event", "calendar"],
     "data": [
         "security/ir.model.access.csv",
         "views/product_product.xml",
