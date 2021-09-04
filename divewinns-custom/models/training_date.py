@@ -16,7 +16,14 @@ class TrainingDate(models.Model):
     @api.model
     def create(self, vals):
         obj = super(TrainingDate, self).create(vals)
-        # TODO: Create calendar event
+        calendar_event = self.env["calendar.event"].create({
+            "name": obj.name,
+            "start": obj.date,
+            "allday": True,
+            "partner_id": obj.organizer_id.id,
+            "partner_ids": obj.partner_ids.ids,
+        })
+        obj.calendar_event_id = calendar_event.id
         return obj
 
     
