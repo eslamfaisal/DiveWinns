@@ -4,7 +4,7 @@
         <field name="model">event.event</field>
         <field name="inherit_id" ref="event.view_event_form"/>
         <field name="arch" type="xml">
-            <page name="Notes" position="after">
+            <page name="event_notes" position="after">
                 <page name="Dates of Training">
                     <field name="training_dates_ids"/>
                 </page>
