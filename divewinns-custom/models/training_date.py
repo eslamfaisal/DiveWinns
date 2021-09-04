@@ -19,11 +19,17 @@ class TrainingDate(models.Model):
         calendar_event = self.env["calendar.event"].create({
             "name": obj.name,
             "start": obj.date,
+            "end": obj.date,
             "allday": True,
             "partner_id": obj.organizer_id.id,
             "partner_ids": obj.partner_ids,
         })
         obj.calendar_event_id = calendar_event.id
         return obj
+
+    @api.onchange('date')
+    def _on_date_changed(self):
+        for training_date in self:
+            training_date.calendar_event_id.start = training_date.date
 
     
