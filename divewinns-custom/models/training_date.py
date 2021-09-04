@@ -21,7 +21,7 @@ class TrainingDate(models.Model):
             "start": obj.date,
             "allday": True,
             "partner_id": obj.organizer_id.id,
-            "partner_ids": obj.partner_ids.ids,
+            "partner_ids": obj.partner_ids,
         })
         obj.calendar_event_id = calendar_event.id
         return obj
