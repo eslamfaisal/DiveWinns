@@ -28,8 +28,12 @@
                             <field name="calendar_event_id" readonly="1"/>
                             <field name="event_id" readonly="1"/>
                         </group>
-                        <field name="partner_ids"/>
                     </group>
+                    <notebook>
+                        <page string="Attendees" name="attendees">
+                            <field name="partner_ids"/>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
