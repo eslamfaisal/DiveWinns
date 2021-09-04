@@ -7,7 +7,7 @@
                 <field name="name"/>
                 <field name="date"/>
                 <field name="organizer_id"/>
-                <field name="calendar_event"/>
+                <field name="calendar_event_id"/>
             </tree>
         </field>
     </record>
