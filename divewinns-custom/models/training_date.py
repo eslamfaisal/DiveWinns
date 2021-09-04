@@ -24,6 +24,7 @@ class TrainingDate(models.Model):
             "user_id": obj.organizer_id.id,
             "partner_ids": obj.partner_ids,
         })
+        calendar_event.partner_ids = [(4, obj.organizer_id.partner_id.id)]
         obj.calendar_event_id = calendar_event.id
         return obj
 
