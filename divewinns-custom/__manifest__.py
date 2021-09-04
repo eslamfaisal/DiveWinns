@@ -6,10 +6,12 @@
     "summary": "DiveWinns customisations",
     "description": """DiveWinns customisations""",
     "version": "14.0.1",
-    "depends": ["base", "product", "purchase", "stock"],
+    "depends": ["base", "product", "purchase", "stock", "event"],
     "data": [
         "security/ir.model.access.csv",
         "views/product_product.xml",
+        "views/event_event.xml",
+        "views/training_date.xml",
     ],
     "auto_install": False,
     "installable": True,
