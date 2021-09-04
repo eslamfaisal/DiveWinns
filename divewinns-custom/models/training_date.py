@@ -4,7 +4,7 @@ class TrainingDate(models.Model):
     _name = "divewinns.training.date"
     _description = "Date of training"
 
-    name = fields.Char(string="Name")
+    name = fields.Char(string="Name", required=True)
     date = fields.Datetime(string="Date", required=True)
     
     event_id = fields.Many2one(comodel_name="event.event", string="Event")
@@ -19,7 +19,7 @@ class TrainingDate(models.Model):
         calendar_event = self.env["calendar.event"].create({
             "name": obj.name,
             "start": obj.date,
-            "end": obj.date,
+            "stop": obj.date,
             "allday": True,
             "partner_id": obj.organizer_id.id,
             "partner_ids": obj.partner_ids,
