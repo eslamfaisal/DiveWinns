@@ -12,7 +12,7 @@ class TrainingDate(models.Model):
     event_id = fields.Many2one(comodel_name="event.event", string="Event")
     calendar_event_id = fields.Many2one(comodel_name="calendar.event", string="Calendar event")
 
-    organizer_id = fields.Many2one(comodel_name="res.users", string="Organizer", required=True)
+    organizer_id = fields.Many2one(comodel_name="res.users", string="Organizer", required=True, default=lambda self: self.env.user)
     #partner_ids = fields.Many2many(comodel_name="res.partner", string="Attendees")
 
 
