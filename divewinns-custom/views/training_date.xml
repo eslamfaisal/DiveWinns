@@ -32,7 +32,7 @@
                     </group>
                     <notebook>
                         <page string="Description" name="description">
-                            <field name="description"/>
+                            <field name="description" placeholder="Training description..."/>
                         </page>
                         <!-- <page string="Attendees" name="attendees">
                             <field name="partner_ids"/>
