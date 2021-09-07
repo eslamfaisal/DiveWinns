@@ -36,5 +36,6 @@ class TrainingDate(models.Model):
     def _on_date_changed(self):
         for training_date in self:
             training_date.calendar_event_id.start = training_date.date
+            training_date.calendar_event_id.stop = training_date.date
 
     
