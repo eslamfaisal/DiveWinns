@@ -6,7 +6,7 @@ class TrainingDate(models.Model):
 
     name = fields.Char(string="Name", required=True)
     date = fields.Datetime(string="Date", required=True)
-    description = fields.Char(string="Description", required=True)
+    description = fields.Text(string="Description", required=True)
     room = fields.Selection(string="Room", required=True, selection=[("training1", "Trainingsroom 1"), ("training2", "Trainingsroom 2"), ("community", "Community"), ("pool", "Pool"), ("bus", "Bus")])
     
     event_id = fields.Many2one(comodel_name="event.event", string="Event")
