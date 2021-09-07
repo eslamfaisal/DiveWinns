@@ -34,9 +34,9 @@
                         <page string="Description" name="description">
                             <field name="description"/>
                         </page>
-                        <page string="Attendees" name="attendees">
+                        <!-- <page string="Attendees" name="attendees">
                             <field name="partner_ids"/>
-                        </page>
+                        </page> -->
                     </notebook>
                 </sheet>
             </form>

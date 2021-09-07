@@ -13,7 +13,7 @@ class TrainingDate(models.Model):
     calendar_event_id = fields.Many2one(comodel_name="calendar.event", string="Calendar event")
 
     organizer_id = fields.Many2one(comodel_name="res.users", string="Organizer", required=True)
-    partner_ids = fields.Many2many(comodel_name="res.partner", string="Attendees")
+    #partner_ids = fields.Many2many(comodel_name="res.partner", string="Attendees")
 
 
 
@@ -26,7 +26,7 @@ class TrainingDate(models.Model):
             "stop": obj.date,
             "allday": True,
             "user_id": obj.organizer_id.id,
-            "partner_ids": obj.partner_ids,
+            #"partner_ids": obj.partner_ids,
         })
         calendar_event.partner_ids = [(4, obj.organizer_id.partner_id.id)]
         obj.calendar_event_id = calendar_event.id
