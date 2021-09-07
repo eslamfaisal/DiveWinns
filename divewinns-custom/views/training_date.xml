@@ -22,6 +22,7 @@
                         <group>
                             <field name="name"/>
                             <field name="date"/>
+                            <field name="room"/>
                             <field name="organizer_id"/>
                         </group>
                         <group>
@@ -30,6 +31,9 @@
                         </group>
                     </group>
                     <notebook>
+                        <page string="Description" name="description">
+                            <field name="description"/>
+                        </page>
                         <page string="Attendees" name="attendees">
                             <field name="partner_ids"/>
                         </page>
