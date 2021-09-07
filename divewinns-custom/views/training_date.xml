@@ -1,0 +1,45 @@
+<odoo>
+    <record model="ir.ui.view" id="divewinns_training_date_tree">
+        <field name="name">divewinns.training.date.tree</field>
+        <field name="model">divewinns.training.date</field>
+        <field name="arch" type="xml">
+            <tree string="Dates of Training">
+                <field name="name"/>
+                <field name="date"/>
+                <field name="organizer_id"/>
+                <field name="calendar_event_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="divewinns_training_date_form">
+        <field name="name">divewinns.training.date.form</field>
+        <field name="model">divewinns.training.date</field>
+        <field name="arch" type="xml">
+            <form string="Dates of Training">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="date"/>
+                            <field name="room"/>
+                            <field name="organizer_id"/>
+                        </group>
+                        <group>
+                            <field name="calendar_event_id" readonly="1"/>
+                            <field name="event_id" readonly="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description" name="description">
+                            <field name="description"/>
+                        </page>
+                        <!-- <page string="Attendees" name="attendees">
+                            <field name="partner_ids"/>
+                        </page> -->
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
