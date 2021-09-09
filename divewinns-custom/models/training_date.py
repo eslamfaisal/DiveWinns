@@ -34,8 +34,8 @@ class TrainingDate(models.Model):
             "start": obj.start,
             "stop": obj.end,
             "user_id": obj.organizer_id.id,
-            "event_id": obj.event_id,
-            "partner_ids": obj.event_id.registration_ids.partner_id,
+            "event_id": obj.event_id.id,
+            "partner_ids": obj.event_id.registration_ids.partner_id.id,
             "alarm_ids": [(4, alarm_id)]
         })
         calendar_event.partner_ids = [(4, obj.organizer_id.partner_id.id)]
