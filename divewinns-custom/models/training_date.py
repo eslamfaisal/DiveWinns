@@ -13,7 +13,7 @@ class TrainingDate(models.Model):
     event_id = fields.Many2one(comodel_name="event.event", string="Event")
     calendar_event_id = fields.Many2one(comodel_name="calendar.event", string="Calendar event")
 
-    organizer_id = fields.Many2one(comodel_name="res.users", string="Organizer", required=True, default=lambda self: self.event_id.instructor_id.user_id)
+    organizer_id = fields.Many2one(comodel_name="res.users", string="Organizer", required=True, default=lambda self: self.event_id.instructor_id.user_id.id)
     #partner_ids = fields.Many2many(comodel_name="res.partner", string="Attendees")
 
 
@@ -41,6 +41,13 @@ class TrainingDate(models.Model):
         calendar_event.partner_ids = [(4, obj.organizer_id.partner_id.id)]
         obj.calendar_event_id = calendar_event.id
         return obj
+
+    @api.onchange("event_id")
+    def _on_event_changed(self):
+        for training_date in self:
+            training_date.name = training_date.event_id.name
+            training_date.organizer_id = training_date.event_id.instructor_id.user_id.id
+
 
     @api.onchange('start', 'end')
     def _on_date_changed(self):
