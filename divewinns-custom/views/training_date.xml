@@ -5,7 +5,8 @@
         <field name="arch" type="xml">
             <tree string="Dates of Training">
                 <field name="name"/>
-                <field name="date"/>
+                <field name="start"/>
+                <field name="end"/>
                 <field name="organizer_id"/>
                 <field name="calendar_event_id"/>
             </tree>
@@ -21,7 +22,8 @@
                     <group>
                         <group>
                             <field name="name"/>
-                            <field name="date"/>
+                            <field name="start"/>
+                            <field name="end"/>
                             <field name="room"/>
                             <field name="organizer_id"/>
                         </group>

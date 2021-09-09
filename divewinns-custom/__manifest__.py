@@ -12,6 +12,7 @@
         "views/product_product.xml",
         "views/event_event.xml",
         "views/training_date.xml",
+        "views/calendar_event.xml",
     ],
     "auto_install": False,
     "installable": True,
