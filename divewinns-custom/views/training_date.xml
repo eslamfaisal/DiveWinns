@@ -9,7 +9,7 @@
                 <field name="end"/>
                 <field name="organizer_id"/>
                 <field name="room"/>
-                <field name="room_availability" widget="badge" decoration-danger="room_availability == '0'" decoration-success="room_availability == '1'" attrs="{'invisible': [('room', '=', False)]}"/>
+                <field name="room_availability" widget="badge" decoration-danger="room_availability == '0'" decoration-success="room_availability == '1'"/>
                 <field name="calendar_event_id"/>
             </tree>
         </field>
