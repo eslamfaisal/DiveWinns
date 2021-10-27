@@ -86,10 +86,5 @@ class TrainingDate(models.Model):
                 'res_model': 'divewinns.training.date',
                 'domain': [
                     ('room', '=', training_date.room),
-                    ('id', '!=', training_date.id),
-                    '|', '|',
-                    '&', ('start', '<=', training_date.start), ('end','>=', training_date.start),
-                    '&', ('start', '<=', training_date.end), ('end','>=', training_date.end),
-                    '&', ('start', '>=', training_date.start), ('start', '<=', training_date.end),
                 ],
             }

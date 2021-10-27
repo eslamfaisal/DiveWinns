@@ -1,4 +1,10 @@
 <odoo>
+    <record model="ir.actions.act_window" id="action_training_dates">
+        <field name="name">Training Dates</field>
+        <field name="res_model">divewinns.training.date</field>
+        <field name="view_mode">calendar,tree,form</field>
+    </record>
+
     <record model="ir.ui.view" id="divewinns_training_date_tree">
         <field name="name">divewinns.training.date.tree</field>
         <field name="model">divewinns.training.date</field>
