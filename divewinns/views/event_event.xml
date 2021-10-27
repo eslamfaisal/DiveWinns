@@ -9,6 +9,9 @@
                     <field name="training_dates_ids"/>
                 </page>
             </page>
+            <field name="organizer_id" position="after">
+                <field name="instructor_id" required="1"/>
+            </field>
         </field>
     </record>
 </odoo>
