@@ -5,7 +5,7 @@
     "author": "istarii",
     "summary": "DiveWinns customisations",
     "description": """DiveWinns customisations""",
-    "version": "14.0.15",
+    "version": "14.0.16",
     "depends": ["base", "product", "purchase", "stock", "event", "calendar", "hr"],
     "data": [
         "security/ir.model.access.csv",
@@ -13,8 +13,8 @@
         "views/event_event.xml",
         "views/training_date.xml",
         "views/calendar_event.xml",
-        "views/menu.xml",
         "views/calendar.xml",
+        "views/menu.xml",
     ],
     "auto_install": False,
     "installable": True,
