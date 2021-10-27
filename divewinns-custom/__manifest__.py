@@ -5,7 +5,7 @@
     "author": "istarii",
     "summary": "DiveWinns customisations",
     "description": """DiveWinns customisations""",
-    "version": "14.0.8",
+    "version": "14.0.9",
     "depends": ["base", "product", "purchase", "stock", "event", "calendar", "hr"],
     "data": [
         "security/ir.model.access.csv",

@@ -65,6 +65,7 @@ class TrainingDate(models.Model):
             if training_date.start and training_date.end and training_date.room:
                 overlapping_training_dates = self.env["divewinns.training.date"].search([
                     ('room', '=', training_date.room),
+                    ('id', '!=', training_date.id),
                     '|', '|',
                     '&', ('start', '<=', training_date.start), ('end','>=', training_date.start),
                     '&', ('start', '<=', training_date.end), ('end','>=', training_date.end),
@@ -81,10 +82,11 @@ class TrainingDate(models.Model):
             return {
                 'type': 'ir.actions.act_window',
                 'name': 'Training dates',
-                'view_mode': 'tree,form',
+                'view_mode': 'calendar',
                 'res_model': 'divewinns.training.date',
                 'domain': [
                     ('room', '=', training_date.room),
+                    ('id', '!=', training_date.id),
                     '|', '|',
                     '&', ('start', '<=', training_date.start), ('end','>=', training_date.start),
                     '&', ('start', '<=', training_date.end), ('end','>=', training_date.end),
