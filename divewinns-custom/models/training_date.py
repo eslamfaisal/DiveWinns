@@ -70,10 +70,10 @@ class TrainingDate(models.Model):
                     '&', ('start', '<=', training_date.end), ('end','>=', training_date.end),
                     '&', ('start', '>=', training_date.start), ('start', '<=', training_date.end),
                 ])
-                training_date.availability = len(overlapping_training_dates) == 0
+                training_date.room_availability = len(overlapping_training_dates) == 0
                 training_date.overlapping_count = len(overlapping_training_dates)
             else:
-                training_date.availability = True
+                training_date.room_availability = True
                 training_date.overlapping_count = 0
 
     def action_get_overlapping(self):
