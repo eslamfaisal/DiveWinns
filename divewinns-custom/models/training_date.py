@@ -11,7 +11,7 @@ class TrainingDate(models.Model):
     end = fields.Datetime(string="End Date", required=True)
     description = fields.Text(string="Description", required=True)
     room = fields.Selection(string="Room", required=True, selection=[("training1", "Trainingsroom 1"), ("training2", "Trainingsroom 2"), ("community", "Community"), ("pool", "Pool"), ("bus", "Bus")])
-    room_availability = fields.Boolean(string="Availability", compute="_compute_room_availability")
+    room_availability = fields.Selection(string="Availability", selection=[("0", 'Unavailable'), ('1', 'Available')], compute="_compute_room_availability")
     overlapping_count = fields.Integer(string="Number of overlaps", compute="_compute_room_availability")
 
     event_id = fields.Many2one(comodel_name="event.event", string="Event")
@@ -71,10 +71,10 @@ class TrainingDate(models.Model):
                     '&', ('start', '<=', training_date.end), ('end','>=', training_date.end),
                     '&', ('start', '>=', training_date.start), ('start', '<=', training_date.end),
                 ])
-                training_date.room_availability = len(overlapping_training_dates) == 0
+                training_date.room_availability = '1' if len(overlapping_training_dates) == 0 else '0'
                 training_date.overlapping_count = len(overlapping_training_dates)
             else:
-                training_date.room_availability = True
+                training_date.room_availability = '1'
                 training_date.overlapping_count = 0
 
     def action_get_overlapping(self):
