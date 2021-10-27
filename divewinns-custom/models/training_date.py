@@ -12,7 +12,7 @@ class TrainingDate(models.Model):
     description = fields.Text(string="Description", required=True)
     room = fields.Selection(string="Room", required=True, selection=[("training1", "Trainingsroom 1"), ("training2", "Trainingsroom 2"), ("community", "Community"), ("pool", "Pool"), ("bus", "Bus")])
     room_availability = fields.Boolean(string="Availability", compute="_compute_room_availability")
-    overlapping_count = fields.Integer(string="Number of overlaps", compute="_compute_availability")
+    overlapping_count = fields.Integer(string="Number of overlaps", compute="_compute_room_availability")
 
     event_id = fields.Many2one(comodel_name="event.event", string="Event")
     calendar_event_id = fields.Many2one(comodel_name="calendar.event", string="Calendar event")
