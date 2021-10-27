@@ -82,7 +82,7 @@ class TrainingDate(models.Model):
                 'type': 'ir.actions.act_window',
                 'name': 'Training dates',
                 'view_mode': 'tree,form',
-                'res_model': 'stanley.offer',
+                'res_model': 'divewinns.training.date',
                 'domain': [
                     ('room', '=', training_date.room),
                     '|', '|',
