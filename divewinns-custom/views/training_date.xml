@@ -15,6 +15,16 @@
         </field>
     </record>
 
+    <record model="ir.ui.view" id="divewinns_training_date_calendar">
+        <field name="name">divewinns.training.date.calendar</field>
+        <field name="model">divewinns.training.date</field>
+        <field name="arch" type="xml">
+            <calendar string="Training dates" color="organizer_id" date_start="start", date_end="end">
+                <field name="name"/>
+            </calendar>
+        </field>
+    </record>
+
     <record model="ir.ui.view" id="divewinns_training_date_form">
         <field name="name">divewinns.training.date.form</field>
         <field name="model">divewinns.training.date</field>
